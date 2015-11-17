@@ -56,18 +56,23 @@ variable "availability_zone" {
   }
 }
 
-
-variable "instance_type" {
-    description = "AWS EC2 instance type."
-#   default = "t2.micro"
-#   default = "t2.small"
-#   default = "t2.medium"
-    default = "t2.large"
-}
-
 variable "docker_instance_count" {
     description = "How many Docker instances to spin up."
-    default = 1 
+    default = 3 
+}
+
+
+variable "docker_instance_type" {
+    description = "AWS EC2 instance type."
+    default = "t2.micro"
+}
+
+variable "docker_private_ip" {
+  default = {
+    "0" = "10.0.0.20"
+    "1" = "10.0.2.20"
+    "2" = "10.0.4.20"
+  }
 }
 
 variable "key_name" {
