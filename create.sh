@@ -1,3 +1,3 @@
 #!/bin/bash
 
-terraform apply
+terraform apply -input=true -refresh=true $*

@@ -3,6 +3,60 @@ variable "aws_region" {
     default = "us-west-2"
 }
 
+variable "name" {
+    description = "The name of this VPC."
+    default = "Ron's Experiment"
+}
+
+variable "realm" {
+    description = "The logical group that all of the infrastructure belongs to. Similar idea to an AWS stack."
+    default = "terraform-experimentation" 
+}
+
+variable "managed_by" {
+    description = "The tool that is manages this resource."
+    default = "Terraform" 
+}
+
+variable "subnet_instance_count" {
+    description = "How many subnets to create (should match the number of availability zones)."
+    default = "3"
+}
+
+variable "public_cidr" {
+    description = "The cidr value to use for the public subnet of the availability zone."
+    default = {
+        "0" = "10.0.0.0/24"
+        "1" = "10.0.2.0/24"
+        "2" = "10.0.4.0/24"
+    }
+}
+
+variable "vpc_id" {
+    description = "The VPC to attach to."
+    default = "vpc-97dcfcf2"
+}
+
+variable "subnet_name" {
+  default = {
+    "0" = "Blue"
+    "1" = "Green"
+    "2" = "Red"
+    "3" = "White"
+    "4" = "Orange"
+    "5" = "Black"
+  }
+}
+
+variable "availability_zone" {
+  default = {
+    "0" = "us-west-2a"
+    "1" = "us-west-2b"
+    "2" = "us-west-2c"
+  }
+}
+
+
 variable "instance_type" {
     description = "AWS EC2 instance type."
 #   default = "t2.micro"
