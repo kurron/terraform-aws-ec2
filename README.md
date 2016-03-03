@@ -21,8 +21,8 @@ This project is a collection of data files consumed by Terraform so there is not
 You need to export your AWS key information to the environment so that Terraform can pick them up and use them.  Typically, this is 
 done via a simple export command.
 
-* `export AWS_ACCESS_KEY_ID=AAAAAAAAAAAAAAAAAAAA`
-* `export AWS_SECRET_ACCESS_KEY=AAAAAAAAAAAAAAAAAAAA`
+* `export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE`
+* `export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
 
 You also need to have access to the private half of the AWS SSH key pair.  The file needs to be set to the correct permissions or 
 SSH will refuse to run.  Typically this is done via the `chmod` command: `chmod 0400 private-half.pem`.
