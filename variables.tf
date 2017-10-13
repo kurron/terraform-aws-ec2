@@ -72,3 +72,8 @@ variable "scheduled" {
     type = "string"
     description = "If set to Yes, the instances will be parked on a schedule"
 }
+
+variable "associate_public_ip_address" {
+    type = "string"
+    description = "If set to true, the instances will have public ip addresses associated to them"
+}

@@ -40,14 +40,15 @@ data "aws_ami" "lookup" {
 resource "aws_instance" "instance" {
     count = "${length( var.subnet_ids )}"
 
-    ami                    = "${data.aws_ami.lookup.id}"
-    ebs_optimized          = "${var.ebs_optimized}"
-    instance_type          = "${var.instance_type}"
-    key_name               = "${var.ssh_key_name}"
-    monitoring             = true
-    vpc_security_group_ids = ["${var.security_group_ids}"]
-    subnet_id              = "${element( var.subnet_ids, count.index )}"
-    iam_instance_profile   = "${var.instance_profile}"
+    ami                         = "${data.aws_ami.lookup.id}"
+    ebs_optimized               = "${var.ebs_optimized}"
+    instance_type               = "${var.instance_type}"
+    key_name                    = "${var.ssh_key_name}"
+    monitoring                  = true
+    associate_public_ip_address = "${var.associate_public_ip_address}"
+    vpc_security_group_ids      = ["${var.security_group_ids}"]
+    subnet_id                   = "${element( var.subnet_ids, count.index )}"
+    iam_instance_profile        = "${var.instance_profile}"
 
     tags {
         Name        = "${format( "${var.name} %02d", count.index+1 )}"
