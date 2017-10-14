@@ -45,7 +45,6 @@ resource "aws_instance" "instance" {
     instance_type               = "${var.instance_type}"
     key_name                    = "${var.ssh_key_name}"
     monitoring                  = true
-    associate_public_ip_address = "${var.associate_public_ip_address}"
     vpc_security_group_ids      = ["${var.security_group_ids}"]
     subnet_id                   = "${element( var.subnet_ids, count.index )}"
     iam_instance_profile        = "${var.instance_profile}"

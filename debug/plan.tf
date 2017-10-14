@@ -51,11 +51,10 @@ module "ec2" {
     freetext                    = "No notes at this time."
     ami_regexp                  = "^amzn-ami-.*-amazon-ecs-optimized$"
     ebs_optimized               = "false"
-    associate_public_ip_address = "false"
     instance_type               = "t2.nano"
     ssh_key_name                = "${data.terraform_remote_state.bastion.ssh_key_name}"
     security_group_ids          = ["${data.terraform_remote_state.security-groups.ec2_id}"]
-    subnet_ids                  = "${data.terraform_remote_state.vpc.private_subnet_ids}"
+    subnet_ids                  = "${data.terraform_remote_state.vpc.public_subnet_ids}"
     instance_profile            = "${data.terraform_remote_state.iam.cross_account_ecr_pull_profile_id}"
     scheduled                   = "Yes"
 }
