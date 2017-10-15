@@ -1,5 +1,7 @@
 # Overview
-This Terraform module is ...
+This Terraform module creates EC2 instances into the provided subnets.
+The subnet defaults will determine if the instances get public ip address
+or not.
 
 # Prerequisites
 * [Terraform](https://terraform.io/) installed and working
@@ -14,6 +16,11 @@ the module.  See [kurron/terraform-environments](https://github.com/kurron/terra
 for example usage.
 
 # Tips and Tricks
+
+## Debugging
+The `debug` folder contains files that can be used to test out local changes
+to the module.  Edit `backend.cfg` and `plan.tf` to your liking and
+then run `debug/debug-module.sh` to test your changes.
 
 # Troubleshooting
 
