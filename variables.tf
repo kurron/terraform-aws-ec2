@@ -72,3 +72,9 @@ variable "scheduled" {
     type = "string"
     description = "If set to Yes, the instances will be parked on a schedule"
 }
+
+variable "instance_limit" {
+    type = "string"
+    description = "A number indicating how many instances to create. A value of 0 creates one instance per subnet."
+    default = "0"
+}

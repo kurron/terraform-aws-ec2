@@ -38,7 +38,7 @@ data "aws_ami" "lookup" {
 }
 
 resource "aws_instance" "instance" {
-    count = "${length( var.subnet_ids )}"
+    count = "${var.instance_limit > "0" ? var.instance_limit : length( var.subnet_ids )}"
 
     ami                         = "${data.aws_ami.lookup.id}"
     ebs_optimized               = "${var.ebs_optimized}"

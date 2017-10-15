@@ -57,6 +57,7 @@ module "ec2" {
     subnet_ids                  = "${data.terraform_remote_state.vpc.public_subnet_ids}"
     instance_profile            = "${data.terraform_remote_state.iam.cross_account_ecr_pull_profile_id}"
     scheduled                   = "Yes"
+    instance_limit              = "0"
 }
 
 output "instance_ids" {
