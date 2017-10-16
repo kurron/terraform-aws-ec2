@@ -49,6 +49,7 @@ module "ec2" {
     creator                     = "kurron@jvmguy.com"
     environment                 = "development"
     freetext                    = "No notes at this time."
+    duty                        = "Docker"
     ami_regexp                  = "^amzn-ami-.*-amazon-ecs-optimized$"
     ebs_optimized               = "false"
     instance_type               = "t2.nano"

@@ -57,6 +57,7 @@ resource "aws_instance" "instance" {
         Environment = "${var.environment}"
         Freetext    = "${var.freetext}"
         Scheduled   = "${var.scheduled}"
+        Duty        = "${var.duty}"
     }
     volume_tags {
         Name        = "${format( "${var.name} %02d", count.index+1 )}"

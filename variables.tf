@@ -33,6 +33,11 @@ variable "freetext" {
     description = "Information that does not fit in the other tags"
 }
 
+variable "duty" {
+    type = "string"
+    description = "Special tag value used to locate specific running instances, e.g. Docker or Bastion"
+}
+
 variable "ami_regexp" {
     type = "string"
     description = "Regular expression to use when looking up an AMI in the specified region"
